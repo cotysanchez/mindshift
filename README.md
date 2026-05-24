@@ -87,17 +87,7 @@ mindshiftcoach/
 5. El sitio quedará en: `public_html/demos/mindshiftcoach/`
 6. Accesible en: **csdigitalpro.com/demos/mindshiftcoach/**
 
-### Opción 2 — FTP con FileZilla
-```
-Host: ftp.csdigitalpro.com
-Usuario: tu-usuario-ftp@csdigitalpro.com
-Contraseña: (ver panel Hostinger → Hosting → FTP Accounts)
-Puerto: 21
-Ruta remota: /public_html/demos/mindshiftcoach/
-```
 
-### Opción 3 — GitHub Pages (Automático)
-El archivo `.github/workflows/deploy.yml` despliega automáticamente a GitHub Pages en cada push a `main`.
 
 > ⚠️ **No requiere configuración de servidor ni base de datos.** Es un sitio 100% estático.
 
@@ -166,4 +156,4 @@ Desarrollado con ❤️ por **[CsDigitalPro](https://csdigitalpro.com)**
 
 ---
 
-*© 2025 MindShift Coach. Demo desarrollado por CsDigitalPro.*
+*© 2026 MindShift Coach. Demo desarrollado por CsDigitalPro.*
