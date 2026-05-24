@@ -1,0 +1,118 @@
+/* =============================================
+   RESET.CSS — MindShift Coach
+   CSS Reset moderno (basado en Andy Bell's reset)
+   ============================================= */
+
+/* Box sizing global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Quitar márgenes y paddings por defecto */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Evitar overflow horizontal */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Configuración base del body */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Evitar que imágenes y media desborden */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Herencia de fuente en inputs y botones */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Quitar estilos de lista */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Quitar estilos de links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Headings sin font-size heredado raro */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Evitar que los párrafos desborden */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Quitar border de iframe */
+iframe {
+  border: none;
+}
+
+/* Botones base */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Accesibilidad: focus visible para navegación por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-accent, #7B2FBE);
+  outline-offset: 3px;
+}
+
+/* Quitar animaciones si el usuario las prefiere reducidas */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

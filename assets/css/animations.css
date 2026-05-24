@@ -1,0 +1,214 @@
+/* =============================================
+   ANIMATIONS.CSS — MindShift Coach
+   Keyframes y clases de animación reutilizables
+   ============================================= */
+
+/* ===== KEYFRAMES ===== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(123, 47, 190, 0);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(123, 47, 190, 0.4);
+  }
+}
+
+@keyframes blink {
+  0%, 50%  { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-5deg) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(123, 47, 190, 0.3); }
+  50%       { border-color: rgba(123, 47, 190, 0.8); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ===== CLASES DE ANIMACIÓN — HERO (entrada de página) ===== */
+
+.hero-label {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+.hero-title {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+}
+
+.hero-ctas {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+}
+
+.hero-image {
+  opacity: 0;
+  animation: fadeInScale 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}
+
+/* ===== CLASES BASE PARA INTERSECTION OBSERVER ===== */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variante: deslizar desde la izquierda */
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-slide-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Variante: deslizar desde la derecha */
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-slide-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Variante: solo fadeIn (sin movimiento) */
+.animate-fade {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.animate-fade.is-visible {
+  opacity: 1;
+}
+
+/* ===== STAGGER DELAYS ===== */
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* ===== PULSE — CTA BUTTON ===== */
+
+.pulse-animation {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* ===== CURSOR PARPADEANTE TYPEWRITER ===== */
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background-color: var(--color-accent-light);
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+/* ===== HOVER LIFT — Cards ===== */
+
+.hover-lift {
+  transition: var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== GLOW BORDER — animado ===== */
+
+.glow-border {
+  animation: borderGlow 2s ease-in-out infinite;
+}
